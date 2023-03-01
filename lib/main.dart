@@ -23,8 +23,20 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  late TabController tabController = TabController(length: 4, vsync: this);
+class _HomePageState extends State<HomePage> {
+  final List data = [
+    {"judul": "Pilihan 1", "data": 1},
+    {"judul": "Pilihan 2", "data": 2},
+    {"judul": "Pilihan 3", "data": 3},
+  ];
+
+  int? dataAwal;
+
+  @override
+  void initState() {
+    dataAwal = data[0]['data'];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,37 +45,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           toolbarHeight: 70,
           backgroundColor: Colors.teal,
           title: const Text('WhatsApp'),
-          bottom: TabBar(controller: tabController, tabs: [
-            Tab(
-              icon: Icon(Icons.camera_alt_rounded),
-            ),
-            Tab(
-              text: 'Chats',
-            ),
-            Tab(
-              text: 'Status',
-            ),
-            Tab(
-              text: 'Calls',
-            ),
-          ]),
         ),
-        body: TabBarView(
-          controller: tabController,
-          children: [
-            Center(
-              child: Text('Camera'),
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.all(30),
+            child: DropdownButton<int>(
+              value: dataAwal,
+              items: data
+                  .map((e) => DropdownMenuItem(
+                        child: Text("${e['judul']}"),
+                        value: e['data'] as int,
+                      ))
+                  .toList(),
+              onChanged: (value) => setState(() {
+                dataAwal = value;
+              }),
             ),
-            Center(
-              child: Text('Chats'),
-            ),
-            Center(
-              child: Text('Status'),
-            ),
-            Center(
-              child: Text('Calls'),
-            ),
-          ],
+          ),
         ));
   }
 }
