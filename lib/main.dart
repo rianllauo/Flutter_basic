@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                   Container(
                     width: 100,
                     height: 100,
-                    color: Colors.amber,
+                    color: Color(0xFFFFC107),
                     child: Center(child: Text('Kuning')),
                   ),
                   Container(
