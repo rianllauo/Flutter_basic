@@ -5,22 +5,44 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('First App'),
-          centerTitle: true,
-        ),
-        body: const Center(
-          child: Text(
-            'Hello World!',
-            style: TextStyle(fontSize: 28),
-          ),
-        ),
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Snackbar'),
+        centerTitle: true,
       ),
+      body: Center(
+          child: ElevatedButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text('ini Snackbar'),
+            action: SnackBarAction(label: 'cancle', onPressed: () {}),
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
+            margin: EdgeInsets.only(bottom: 20, left: 8, right: 8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+          ));
+        },
+        child: Text('Show Snackbar'),
+      )),
     );
   }
 }
