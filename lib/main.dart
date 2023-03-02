@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import './pages/home.dart';
+import './pages/profile.dart';
+import './pages/settings.dart';
 
 void main() {
   runApp(MyApp());
@@ -55,85 +58,32 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.zero,
                 children: [
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
+                      leading: Icon(Icons.home),
+                      title: Text('Home'),
+                      trailing: Icon(Icons.arrow_right_rounded),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ));
+                      }),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
+                      leading: Icon(Icons.person),
+                      title: Text('Profile'),
+                      trailing: Icon(Icons.arrow_right_rounded),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => Profile(),
+                        ));
+                      }),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
-                    trailing: Icon(Icons.arrow_right_rounded),
-                  ),
+                      leading: Icon(Icons.settings),
+                      title: Text('Settings'),
+                      trailing: Icon(Icons.arrow_right_rounded),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => Settings(),
+                        ));
+                      }),
                 ],
               ),
             ),
