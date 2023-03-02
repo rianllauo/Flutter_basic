@@ -29,52 +29,115 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
-        backgroundColor: Colors.blue,
-        title: const Text('Bottom Navigation Bar'),
+        backgroundColor: Colors.teal,
+        title: const Text('Drawer'),
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(30),
-          child: ElevatedButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  isDismissible: false,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15)),
+      body: Center(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: 180,
+              padding: EdgeInsets.all(20),
+              color: Colors.teal[300],
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                'Rian Kristian',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
                   ),
-                  context: context,
-                  builder: (context) {
-                    return Container(
-                      height: 250,
-                      padding: EdgeInsets.only(top: 20),
-                      child: ListView(
-                        children: [
-                          ListTile(
-                            leading: Icon(Icons.home),
-                            title: Text('Home'),
-                          ),
-                          ListTile(
-                            leading: Icon(Icons.shop),
-                            title: Text('Shop'),
-                          ),
-                          ListTile(
-                            leading: Icon(Icons.shopping_bag),
-                            title: Text('Cart'),
-                          ),
-                          ListTile(
-                            leading: Icon(Icons.cancel),
-                            title: Text('Cancle'),
-                            onTap: () => Navigator.pop(context),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
-              child: Text('Show Button Sheet')),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Home'),
+                    trailing: Icon(Icons.arrow_right_rounded),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
